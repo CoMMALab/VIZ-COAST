@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<robot name="simple_cuboid_small">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.0125" /> <!-- 1/8th the volume if uniformly scaled -->
+      <inertia ixx="0.000045" ixy="0" ixz="0" iyy="0.000045" iyz="0" izz="0.0000075" />
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.03 0.045 0.1" /> <!-- halved -->
+      </geometry>
+      <material name="green">
+        <color rgba="0 1 0 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <geometry>
+        <box size="0.0295 0.0445 0.0995" /> <!-- halved from 0.059 0.089 0.199 -->
+      </geometry>
+    </collision>
+
+    <!-- Scaled contact spheres (same radius, but positions halved) -->
+    <collision>
+      <origin xyz="-0.015 -0.0225 -0.05" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="1e-7"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.015 0.0225 -0.05" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="1e-7"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.015 0.0225 -0.05" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="1e-7"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.015 -0.0225 -0.05" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="1e-7"/>
+      </geometry>
+    </collision>
+
+    <collision>
+      <origin xyz="-0.015 -0.0225 0.05" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="1e-7"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.015 0.0225 0.05" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="1e-7"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.015 0.0225 0.05" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="1e-7"/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.015 -0.0225 0.05" rpy="0 0 0"/>
+      <geometry>
+        <sphere radius="1e-7"/>
+      </geometry>
+    </collision>
+
+  </link>
+</robot>

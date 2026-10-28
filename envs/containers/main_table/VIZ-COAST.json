@@ -1,0 +1,112 @@
+{
+    "global": {
+        "exp": "containers",
+        "method": "zoast",
+        "z3_encoding": "madagascar",
+        "provider": "gemini",
+        "model": "gemini-3.5-flash",
+        "reasoning_effort": "medium",
+        "prompt_strategy": "on failure",
+        "feedback": true,
+        "reprompt_failure_threshold": 5,
+        "reps": 1,
+        "max_iterations": 100,
+        "incremental_initial_horizon": 1,
+        "plan_as_subproc": false,
+        "timeout": 120,
+        "trial_mode": true,
+        "results_file": "envs/containers/main_table"
+    },
+    "specific": [
+        {
+            "goals": "(on radish mystove)"
+        },
+        {
+            "goals": "(on celery mystove)"
+        },
+        {
+            "goals": "(on celery mysink)"
+        },
+        {
+            "goals": "(on celery mynorth)"
+        },
+        {
+            "goals": "(on egg mynorth)"
+        },
+        {
+            "goals": "(on bacon mynorth)(on g1 mynorth)"
+        },
+        {
+            "goals": "(on g1 mysink)(on g2 mystove)"
+        },
+        {
+            "goals": "(on g1 mynorth)(on celery mynorth)"
+        },
+        {
+            "goals": "(on bacon mysink)(on g1 mynorth)"
+        },
+        {
+            "goals": "(on g1 mysink)(closed lid3 mynorth)"
+        },
+        {
+            "goals": "(on radish mynorth)(on celery mystove)(on egg mystove)"
+        },
+        {
+            "goals": "(on bacon mystove)(on egg mystove)(closed lid3 mystove)"
+        },
+        {
+            "goals": "(on g2 mynorth)(on radish mysink)(closed lid2 mynorth)"
+        },
+        {
+            "goals": "(on g2 mystove)(closed lid2 mystove)(closed lid1 mynorth)"
+        },
+        {
+            "goals": "(on celery mystove)(on egg mystove)(closed lid1 mystove)"
+        },
+        {
+            "goals": "(on celery mynorth)(on radish mystove)(on egg mynorth)(on g1 mysink)"
+        },
+        {
+            "goals": "(on g2 mystove)(on radish mystove)(on bacon mysink)(on egg mysink)"
+        },
+        {
+            "goals": "(on radish mysink)(on egg mystove)(on bacon mystove)(closed lid2 mystove)"
+        },
+        {
+            "goals": "(on egg mysink)(on radish mystove)(on g2 mynorth)(on g1 mysink)"
+        },
+        {
+            "goals": "(on radish mysink)(on bacon mynorth)(closed lid1 mynorth)(closed lid3 mysink)"
+        },
+        {
+            "goals": "(on egg mynorth)(on g1 mysink)(on celery mynorth)(closed lid3 mysink)(closed lid2 mystove)"
+        },
+        {
+            "goals": "(on egg mysink)(on g2 mystove)(on bacon mystove)(on g1 mysink)(on radish mysink)"
+        },
+        {
+            "goals": "(on celery mynorth)(on radish mynorth)(on g1 mysink)(on egg mysink)(closed lid1 mynorth)"
+        },
+        {
+            "goals": "(on g1 mysink)(on g2 mystove)(on celery mysink)(on bacon mysink)(closed lid2 mystove)"
+        },
+        {
+            "goals": "(on egg mystove)(on radish mysink)(on g1 mysink)(closed lid2 mynorth)(closed lid3 mystove)"
+        },
+        {
+            "goals": "(on radish mynorth)(on egg mysink)(on bacon mystove)(on celery mysink)(closed lid3 mystove)(closed lid1 mynorth)"
+        },
+        {
+            "goals": "(on egg mysink)(on radish mystove)(on g2 mynorth)(on bacon mysink)(on celery mysink)(on g1 mysink)"
+        },
+        {
+            "goals": "(on radish mysink)(on g2 mysink)(on bacon mysink)(on celery mystove)(closed lid1 mystove)(closed lid2 mysink)"
+        },
+        {
+            "goals": "(on radish mynorth)(on celery mysink)(on bacon mysink)(on g2 mysink)(on g1 mynorth)(on egg mysink)"
+        },
+        {
+            "goals": "(on g1 mystove)(on g2 mysink)(on radish mystove)(on egg mystove)(on celery mynorth)(on bacon mystove)"
+        }
+    ]
+}

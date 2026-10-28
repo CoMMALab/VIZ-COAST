@@ -1,0 +1,1307 @@
+diff --git a/models/cup.urdf b/models/cup.urdf
+index 22a0b60..7355bf9 100644
+--- a/models/cup.urdf
++++ b/models/cup.urdf
+@@ -13,7 +13,7 @@
+     <visual>
+       <origin xyz="0 0.0345 0" rpy="0 0 0" />
+       <geometry>
+-        <box size="0.07 0.001 0.15" />
++        <box size="0.07 0.001 0.01" />
+       </geometry>
+       <material name="blue">
+         <color rgba="0 0 1 0.4" />
+@@ -22,7 +22,7 @@
+     <visual>
+       <origin xyz="0 -0.0345 0" rpy="0 0 0" />
+       <geometry>
+-        <box size="0.07 0.001 0.15" />
++        <box size="0.07 0.001 0.01" />
+       </geometry>
+       <material name="blue">
+         <color rgba="0 0 1 0.4" />
+@@ -31,7 +31,7 @@
+     <visual>
+       <origin xyz="0.0345 0 0" rpy="0 0 0" />
+       <geometry>
+-        <box size="0.001 0.07 0.15" />
++        <box size="0.001 0.07 0.01" />
+       </geometry>
+       <material name="blue">
+         <color rgba="0 0 1 0.4" />
+@@ -40,7 +40,7 @@
+     <visual>
+       <origin xyz="-0.0345 0 0" rpy="0 0 0" />
+       <geometry>
+-        <box size="0.001 0.07 0.15" />
++        <box size="0.001 0.07 0.01" />
+       </geometry>
+       <material name="blue">
+         <color rgba="0 0 1 0.4" />
+@@ -56,25 +56,25 @@
+     <collision>
+       <origin xyz="0 0.0345 0" rpy="0 0 0" />
+       <geometry>
+-        <box size="0.07 0.001 0.15" />
++        <box size="0.07 0.001 0.01" />
+       </geometry>
+     </collision>
+     <collision>
+       <origin xyz="0 -0.0345 0" rpy="0 0 0" />
+       <geometry>
+-        <box size="0.07 0.001 0.15" />
++        <box size="0.07 0.001 0.01" />
+       </geometry>
+     </collision>
+     <collision>
+       <origin xyz="0.0345 0 0" rpy="0 0 0" />
+       <geometry>
+-        <box size="0.001 0.07 0.15" />
++        <box size="0.001 0.07 0.01" />
+       </geometry>
+     </collision>
+     <collision>
+       <origin xyz="-0.0345 0 0" rpy="0 0 0" />
+       <geometry>
+-        <box size="0.001 0.07 0.15" />
++        <box size="0.001 0.07 0.01" />
+       </geometry>
+     </collision>
+   </link>
+diff --git a/models/drake/iiwa_description/urdf/dual_iiwa14_polytope_collision.urdf b/models/drake/iiwa_description/urdf/dual_iiwa14_polytope_collision.urdf
+index d80a0ad604b61ce7b7a0d4845644ab09be7e5901..f295cc36337f936f5bb369b303936d53c65f3a6a 100644
+GIT binary patch
+delta 35
+qcmaEIn{n4|#tmVdEKxu(Inh>p@&ymA$@gr2PVP4s*nEylEExb6TMq&N
+
+delta 34
+qcmdmWoAJqQ#tmVdlO252HfP&7F-|tH6qvlvR&A0L|K^)q50e1*@C}>*
+
+diff --git a/models/drake/iiwa_description/urdf/iiwa14_polytope_collision.urdf b/models/drake/iiwa_description/urdf/iiwa14_polytope_collision.urdf
+index 18fe79fa415369f39f2119f1678888361644aaba..e1147bb361172a73c63125bc03178a5e53ee3dcd 100644
+GIT binary patch
+delta 73
+zcmX?5_|<R2CnnZ{#JrTm%|Dpj6q$okQzjP(h-?m1F=pffi^pdGWhc*4ZARj5)>HFk
+Q<l?f?FUn8KFR|kS02F;10{{R3
+
+literal 14528
+zcmeHNS##qy5`Ldwf#_wQ%=?h0B&9NAXW~@i*_wE3YoAmw1xbu4LdC<fCdq%_20(y^
+zMe49DO{L-~k3|q_G`joyx^WD@e_lrDi6m)A<5ADlj2`-a{BHQ&)fF0@{s&!M6~g~S
+z@N>TiQ#7SPz9eym);L8t&*+@QB*7V(qK6H7#z8{SETK!3C)1f8hHGp(lNF6N8C{V{
+zK%*#R%4_VkCc6LG80Y5t_Wt(n6T1KD_BZt7?Jqaz!~f7vKipj-c)t65kG|Y|{QT>$
+zH+R=J*G#X@pNjC)8)#H&eiGrOxR26MXi29eO5dY^E>{tGMoW?|NQwd+qiKTEEDUfI
+zZ4jQ#NRXi<k5LvbiS~|L<$ggDGNTCrF=+-e3iB6I5r#K(8D`9VA$*g0m=B0>JVj9$
+zKO!IHDU64OK<P=*OM9mx<b?B2=mX7AjF)8869Lpi5chHVp2y3mx5%>9dtG0z*IGhT
+zjV5z_9X^ISf885{rW_Hs%N0#B^yMl1%4SZJl-n2HE+Jl%5J$xzA0iw)^6$Yr-V-JB
+z2R!N-nt|jm1Dnoe>+<XTNj@l9Iq4SFM|+C;ln@fP%j$F0_LsHUF3JHh;&)F`pA#I<
+zx6Tm+FkzPMS_8*4ea~eo+5^jUy}oDpj=S&FKO}VBGWEW1xc$Bu1H|{)IF4w8NA=lu
+z?R^LPLZ;hIBP`4UU{BNhcM)c-mSNT@ezyh^Bk^l83uA^h^ng<$0GKT>ux%JcC?&}g
+zLBPA&f&m(M;a@3AD9tn(*c`C}IZQw?4oLo;hQQemBwIsFp+8mt{5bndp?qR6AVc(v
+zekJxMOw5G0_E5H20VHSPb7?S|gmWN{WVHdbAovGR-F%gwIbJ}j7>-Y8)GHNZXj_Dl
+zAR2-737f%0A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
+CU&c`Y
+
+diff --git a/models/drake/objects/black_box.urdf b/models/drake/objects/black_box.urdf
+index 5b28248..8be7ea7 100644
+--- a/models/drake/objects/black_box.urdf
++++ b/models/drake/objects/black_box.urdf
+@@ -1,121 +1,26 @@
+ <?xml version="1.0"?>
+-<robot name="simple_cuboid">
++<robot name="small_box">
+   <link name="base_link">
+-    <inertial>
+-      <origin xyz="0 0 0" rpy="0 0 0" />
+-      <mass value="0.122" />
+-      <inertia ixx="0.000360" ixy="0" ixz="0" iyy="0.0000615" iyz="0"
+-          izz="0.00036" />
+-    </inertial>
++    <!-- Visual geometry: 0.05m cube -->
+     <visual>
+-      <origin xyz="0 0 0" rpy="0 0 0" />
++      <origin xyz="0 0 0" rpy="0 0 0"/>
+       <geometry>
+-        <box size="0.165 0.055 0.180" />
++        <box size="0.2 0.2 0.2"/>
+       </geometry>
+-      <material name="blackish">
+-        <color rgba="0.1 0.1 0.1 1.0" />
++      <material name="red">
++        <color rgba="1 0 0 1"/>
+       </material>
+     </visual>
+-
+-    <!--
+-      This places contact spheres on the corners of the visual box and a
+-      *slightly* smaller inset contact box (centered on the visual origin). This
+-      accounts for issues in the contact computation providing stable table
+-      contact *and* supports grasping.
+-
+-      When the box is in stable contact with the ground plane, the corner
+-      spheres will provide fixed contact points (simulating distributed contact
+-      points around the face).  However, for arbitrary grip configuration, the
+-      slightly inset box will provide contact with a *slight* offset (in this
+-      case a deviation of 0.0005 m from the visual surface).
+-
+-      https://github.com/RobotLocomotion/drake/issues/6254 tracks the
+-      difficulty in supporting face-to-face contact.
+-     -->
+-    <collision>
+-      <geometry>
+-        <box size="0.164 0.054 0.170" />
+-      </geometry>
+-    </collision>
+-
+-    <collision>
+-      <origin xyz="-0.0825 -0.0275 -0.09" rpy="0 0 0"/>
+-      <geometry>
+-        <sphere radius="1e-7"/>
+-      </geometry>
+-    </collision>
+-    <collision>
+-      <origin xyz="-0.0825 0.0275 -0.09" rpy="0 0 0"/>
+-      <geometry>
+-        <sphere radius="1e-7"/>
+-      </geometry>
+-    </collision>
+-    <collision>
+-      <origin xyz="0.0825 0.0275 -0.09" rpy="0 0 0"/>
+-      <geometry>
+-        <sphere radius="1e-7"/>
+-      </geometry>
+-    </collision>
+-    <collision>
+-      <origin xyz="0.0825 -0.0275 -0.09" rpy="0 0 0"/>
+-      <geometry>
+-        <sphere radius="1e-7"/>
+-      </geometry>
+-    </collision>
+-
+-    <!-- Add some spheres near the center too -->
+-    <collision>
+-      <origin xyz="-0.0 -0.0275 -0.09" rpy="0 0 0"/>
+-      <geometry>
+-        <sphere radius="1e-7"/>
+-      </geometry>
+-    </collision>
+-
+-    <collision>
+-      <origin xyz="-0.0 0.0275 -0.09" rpy="0 0 0"/>
+-      <geometry>
+-        <sphere radius="1e-7"/>
+-      </geometry>
+-    </collision>
+-
+-    <collision>
+-      <origin xyz="-0.0825 -0.0275 0.09" rpy="0 0 0"/>
+-      <geometry>
+-        <sphere radius="1e-7"/>
+-      </geometry>
+-    </collision>
+-    <collision>
+-      <origin xyz="-0.0825 0.0275 0.09" rpy="0 0 0"/>
+-      <geometry>
+-        <sphere radius="1e-7"/>
+-      </geometry>
+-    </collision>
+-    <collision>
+-      <origin xyz="0.0825 0.0275 0.09" rpy="0 0 0"/>
+-      <geometry>
+-        <sphere radius="1e-7"/>
+-      </geometry>
+-    </collision>
+-    <collision>
+-      <origin xyz="0.0825 -0.0275 0.09" rpy="0 0 0"/>
+-      <geometry>
+-        <sphere radius="1e-7"/>
+-      </geometry>
+-    </collision>
+-
++    <!-- Collision geometry: Matches visual -->
+     <collision>
+-      <origin xyz="-0.0 -0.0275 0.09" rpy="0 0 0"/>
++      <origin xyz="0 0 0" rpy="0 0 0"/>
+       <geometry>
+-        <sphere radius="1e-7"/>
++        <box size="0.05 0.05 0.05"/>
+       </geometry>
+     </collision>
++    <!-- Inertial properties: Mass 0.01kg, centered -->
+ 
+-    <collision>
+-      <origin xyz="-0.0 0.0275 0.09" rpy="0 0 0"/>
+-      <geometry>
+-        <sphere radius="1e-7"/>
+-      </geometry>
+-    </collision>
++    <!-- Surface properties: Match shelf's friction and restitution -->
+ 
+   </link>
+-</robot>
++</robot>
+\ No newline at end of file
+diff --git a/models/drake/objects/block_for_pick_and_place.urdf b/models/drake/objects/block_for_pick_and_place.urdf
+index 9db0323..ca1e485 100644
+--- a/models/drake/objects/block_for_pick_and_place.urdf
++++ b/models/drake/objects/block_for_pick_and_place.urdf
+@@ -1,92 +1,78 @@
+ <?xml version="1.0"?>
+-<robot name="simple_cuboid">
++<robot name="simple_cuboid_small">
+   <link name="base_link">
+     <inertial>
+       <origin xyz="0 0 0" rpy="0 0 0" />
+-      <mass value="0.1" />
+-      <inertia ixx="0.000363" ixy="0" ixz="0" iyy="0.000363" iyz="0"
+-          izz="0.00006" />
++      <mass value="0.0125" /> <!-- 1/8th the volume if uniformly scaled -->
++      <inertia ixx="0.000045" ixy="0" ixz="0" iyy="0.000045" iyz="0" izz="0.0000075" />
+     </inertial>
++
+     <visual>
+       <origin xyz="0 0 0" rpy="0 0 0" />
+       <geometry>
+-        <box size="0.06 0.06 0.2" />
++        <box size="0.03 0.045 0.1" /> <!-- halved -->
+       </geometry>
+-      <material name="red">
+-        <color rgba="0.8 0.1 0.1 0.9" />
++      <material name="green">
++        <color rgba="0 0 1 1" />
+       </material>
+     </visual>
+ 
+-    <!--
+-      This places contact spheres on the corners of the visual box and a
+-      *slightly* smaller inset contact box (centered on the visual origin). This
+-      accounts for issues in the contact computation providing stable table
+-      contact *and* supports grasping.
+-
+-      When the box is in stable contact with the ground plane, the corner
+-      spheres will provide fixed contact points (simulating distributed contact
+-      points around the face).  However, for arbitrary grip configuration, the
+-      slightly inset box will provide contact with a *slight* offset (in this
+-      case a deviation of 0.0005 m from the visual surface).
+-
+-      https://github.com/RobotLocomotion/drake/issues/6254 tracks the
+-      difficulty in supporting face-to-face contact.
+-     -->
+     <collision>
+       <geometry>
+-        <box size="0.059 0.059 0.199" />
++        <box size="0.0295 0.0445 0.0995" /> <!-- halved from 0.059 0.089 0.199 -->
+       </geometry>
+     </collision>
+ 
++    <!-- Scaled contact spheres (same radius, but positions halved) -->
+     <collision>
+-      <origin xyz="-0.03 -0.03 -0.1" rpy="0 0 0"/>
++      <origin xyz="-0.015 -0.0225 -0.05" rpy="0 0 0"/>
+       <geometry>
+         <sphere radius="1e-7"/>
+       </geometry>
+     </collision>
+     <collision>
+-      <origin xyz="-0.03 0.03 -0.1" rpy="0 0 0"/>
++      <origin xyz="-0.015 0.0225 -0.05" rpy="0 0 0"/>
+       <geometry>
+         <sphere radius="1e-7"/>
+       </geometry>
+     </collision>
+     <collision>
+-      <origin xyz="0.03 0.03 -0.1" rpy="0 0 0"/>
++      <origin xyz="0.015 0.0225 -0.05" rpy="0 0 0"/>
+       <geometry>
+         <sphere radius="1e-7"/>
+       </geometry>
+     </collision>
+     <collision>
+-      <origin xyz="0.03 -0.03 -0.1" rpy="0 0 0"/>
++      <origin xyz="0.015 -0.0225 -0.05" rpy="0 0 0"/>
+       <geometry>
+         <sphere radius="1e-7"/>
+       </geometry>
+     </collision>
+ 
+     <collision>
+-      <origin xyz="-0.03 -0.03 0.1" rpy="0 0 0"/>
++      <origin xyz="-0.015 -0.0225 0.05" rpy="0 0 0"/>
+       <geometry>
+         <sphere radius="1e-7"/>
+       </geometry>
+     </collision>
+     <collision>
+-      <origin xyz="-0.03 0.03 0.1" rpy="0 0 0"/>
++      <origin xyz="-0.015 0.0225 0.05" rpy="0 0 0"/>
+       <geometry>
+         <sphere radius="1e-7"/>
+       </geometry>
+     </collision>
+     <collision>
+-      <origin xyz="0.03 0.03 0.1" rpy="0 0 0"/>
++      <origin xyz="0.015 0.0225 0.05" rpy="0 0 0"/>
+       <geometry>
+         <sphere radius="1e-7"/>
+       </geometry>
+     </collision>
+     <collision>
+-      <origin xyz="0.03 -0.03 0.1" rpy="0 0 0"/>
++      <origin xyz="0.015 -0.0225 0.05" rpy="0 0 0"/>
+       <geometry>
+         <sphere radius="1e-7"/>
+       </geometry>
+     </collision>
+ 
+-   </link>
++  </link>
+ </robot>
+diff --git a/models/drake/objects/block_for_pick_and_place_mid_size.urdf b/models/drake/objects/block_for_pick_and_place_mid_size.urdf
+index c7c8392..74b482f 100644
+--- a/models/drake/objects/block_for_pick_and_place_mid_size.urdf
++++ b/models/drake/objects/block_for_pick_and_place_mid_size.urdf
+@@ -1,89 +1,78 @@
+ <?xml version="1.0"?>
+-<robot name="simple_cuboid">
++<robot name="simple_cuboid_small">
+   <link name="base_link">
+     <inertial>
+       <origin xyz="0 0 0" rpy="0 0 0" />
+-      <mass value="0.1" />
+-      <inertia ixx="0.000363" ixy="0" ixz="0" iyy="0.000363" iyz="0"
+-          izz="0.00006" />
++      <mass value="0.0125" /> <!-- 1/8th the volume if uniformly scaled -->
++      <inertia ixx="0.000045" ixy="0" ixz="0" iyy="0.000045" iyz="0" izz="0.0000075" />
+     </inertial>
++
+     <visual>
+       <origin xyz="0 0 0" rpy="0 0 0" />
+       <geometry>
+-        <box size="0.06 0.075 0.2" />
++        <box size="0.03 0.045 0.1" /> <!-- halved -->
+       </geometry>
+-      <material name="blue">
+-        <color rgba="0.1 0.8 0.1 0.9" />
++      <material name="green">
++        <color rgba="1 0 0 1" />
+       </material>
+     </visual>
+ 
+-    <!--
+-      This places contact spheres on the corners of the visual box and a
+-      *slightly* smaller inset contact box (centered on the visual origin). This
+-      accounts for issues in the contact computation providing stable table
+-      contact *and* supports grasping.
+-
+-      When the box is in stable contact with the ground plane, the corner
+-      spheres will provide fixed contact points (simulating distributed contact
+-      points around the face).  However, for arbitrary grip configuration, the
+-      slightly inset box will provide contact with a *slight* offset (in this
+-      case a deviation of 0.0005 m from the visual surface).
+-     -->
+     <collision>
+       <geometry>
+-        <box size="0.059 0.089 0.199" />
++        <box size="0.0295 0.0445 0.0995" /> <!-- halved from 0.059 0.089 0.199 -->
+       </geometry>
+     </collision>
+ 
++    <!-- Scaled contact spheres (same radius, but positions halved) -->
+     <collision>
+-      <origin xyz="-0.03 -0.0375 -0.1" rpy="0 0 0"/>
++      <origin xyz="-0.015 -0.0225 -0.05" rpy="0 0 0"/>
+       <geometry>
+         <sphere radius="1e-7"/>
+       </geometry>
+     </collision>
+     <collision>
+-      <origin xyz="-0.03 0.0375 -0.1" rpy="0 0 0"/>
++      <origin xyz="-0.015 0.0225 -0.05" rpy="0 0 0"/>
+       <geometry>
+         <sphere radius="1e-7"/>
+       </geometry>
+     </collision>
+     <collision>
+-      <origin xyz="0.03 0.0375 -0.1" rpy="0 0 0"/>
++      <origin xyz="0.015 0.0225 -0.05" rpy="0 0 0"/>
+       <geometry>
+         <sphere radius="1e-7"/>
+       </geometry>
+     </collision>
+     <collision>
+-      <origin xyz="0.03 -0.0375 -0.1" rpy="0 0 0"/>
++      <origin xyz="0.015 -0.0225 -0.05" rpy="0 0 0"/>
+       <geometry>
+         <sphere radius="1e-7"/>
+       </geometry>
+     </collision>
+ 
+     <collision>
+-      <origin xyz="-0.03 -0.0375 0.1" rpy="0 0 0"/>
++      <origin xyz="-0.015 -0.0225 0.05" rpy="0 0 0"/>
+       <geometry>
+         <sphere radius="1e-7"/>
+       </geometry>
+     </collision>
+     <collision>
+-      <origin xyz="-0.03 0.0375 0.1" rpy="0 0 0"/>
++      <origin xyz="-0.015 0.0225 0.05" rpy="0 0 0"/>
+       <geometry>
+         <sphere radius="1e-7"/>
+-      </geometry>d
++      </geometry>
+     </collision>
+     <collision>
+-      <origin xyz="0.03 0.0375 0.1" rpy="0 0 0"/>
++      <origin xyz="0.015 0.0225 0.05" rpy="0 0 0"/>
+       <geometry>
+         <sphere radius="1e-7"/>
+       </geometry>
+     </collision>
+     <collision>
+-      <origin xyz="0.03 -0.0375 0.1" rpy="0 0 0"/>
++      <origin xyz="0.015 -0.0225 0.05" rpy="0 0 0"/>
+       <geometry>
+         <sphere radius="1e-7"/>
+       </geometry>
+     </collision>
+ 
+-   </link>
++  </link>
+ </robot>
+diff --git a/models/franka_description/robots/panda_arm.urdf b/models/franka_description/robots/panda_arm.urdf
+index cee1f7d..8715615 100644
+--- a/models/franka_description/robots/panda_arm.urdf
++++ b/models/franka_description/robots/panda_arm.urdf
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" ?>
+ <!-- =================================================================================== -->
+-<!-- |    This document was autogenerated by xacro from panda_arm.urdf.xacro           | -->
++<!-- |    This document was autogenerated by xacro from panda_arm_hand.urdf.xacro      | -->
+ <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED                                 | -->
+ <!-- =================================================================================== -->
+ <robot name="panda" xmlns:xacro="http://www.ros.org/wiki/xacro">
+@@ -163,4 +163,69 @@
+     <child link="panda_link8"/>
+     <axis xyz="0 0 0"/>
+   </joint>
+-</robot>
++  <joint name="panda_hand_joint" type="fixed">
++    <parent link="panda_link8"/>
++    <child link="panda_hand"/>
++    <origin rpy="0 0 -0.785398163397" xyz="0 0 0"/>
++  </joint>
++  <link name="panda_hand">
++    <visual>
++      <geometry>
++        <mesh filename="package://franka_description/meshes/visual/hand.dae"/>
++      </geometry>
++    </visual>
++    <collision>
++      <geometry>
++        <mesh filename="package://franka_description/meshes/collision/hand.stl"/>
++      </geometry>
++    </collision>
++  </link>
++  <link name="panda_leftfinger">
++    <visual>
++      <geometry>
++        <mesh filename="package://franka_description/meshes/visual/finger.dae"/>
++      </geometry>
++    </visual>
++    <collision>
++      <geometry>
++        <mesh filename="package://franka_description/meshes/collision/finger.stl"/>
++      </geometry>
++    </collision>
++  </link>
++  <link name="panda_rightfinger">
++    <visual>
++      <origin rpy="0 0 3.14159265359" xyz="0 0 0"/>
++      <geometry>
++        <mesh filename="package://franka_description/meshes/visual/finger.dae"/>
++      </geometry>
++    </visual>
++    <collision>
++      <origin rpy="0 0 3.14159265359" xyz="0 0 0"/>
++      <geometry>
++        <mesh filename="package://franka_description/meshes/collision/finger.stl"/>
++      </geometry>
++    </collision>
++  </link>
++  <joint name="panda_finger_joint1" type="prismatic">
++    <parent link="panda_hand"/>
++    <child link="panda_leftfinger"/>
++    <origin rpy="0 0 0" xyz="0 0 0.0584"/>
++    <axis xyz="0 1 0"/>
++    <limit effort="20" lower="0.0" upper="0.04" velocity="0.2"/>
++  </joint>
++  <joint name="panda_finger_joint2" type="prismatic">
++    <parent link="panda_hand"/>
++    <child link="panda_rightfinger"/>
++    <origin rpy="0 0 0" xyz="0 0 0.0584"/>
++    <axis xyz="0 -1 0"/>
++    <limit effort="20" lower="0.0" upper="0.04" velocity="0.2"/>
++    <mimic joint="panda_finger_joint1"/>
++  </joint>
++  <link name="tool_link"/>
++  <joint name="tool_joint" type="fixed">
++    <origin rpy="0 0 2.35619449019" xyz="0.0 0 0.1"/>
++    <axis xyz="0 0 1"/>
++    <parent link="panda_link8"/>
++    <child link="tool_link"/>
++  </joint>
++</robot>
+\ No newline at end of file
+diff --git a/models/franka_description/robots/panda_arm_hand.urdf b/models/franka_description/robots/panda_arm_hand.urdf
+index 3476fd5..d9e0f9d 100644
+--- a/models/franka_description/robots/panda_arm_hand.urdf
++++ b/models/franka_description/robots/panda_arm_hand.urdf
+@@ -10,11 +10,7 @@
+         <mesh filename="package://franka_description/meshes/visual/link0.dae"/>
+       </geometry>
+     </visual>
+-    <collision>
+-      <geometry>
+-        <mesh filename="package://franka_description/meshes/collision/link0.stl"/>
+-      </geometry>
+-    </collision>
++
+   </link>
+   <link name="panda_link1">
+     <visual>
+@@ -27,6 +23,12 @@
+         <mesh filename="package://franka_description/meshes/collision/link1.stl"/>
+       </geometry>
+     </collision>
++    <inertial>
++      <origin rpy="0 0 0" xyz="-0.1 0 0.07"/>
++      <mass value="5"/>
++      <inertia ixx="0.05" ixy="0" ixz="0" iyy="0.06" iyz="0" izz="0.03"/>
++    </inertial>
++
+   </link>
+   <joint name="panda_joint1" type="revolute">
+     <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
+@@ -42,12 +44,14 @@
+         <mesh filename="package://franka_description/meshes/visual/link2.dae"/>
+       </geometry>
+     </visual>
+-    <collision>
+-      <geometry>
+-        <mesh filename="package://franka_description/meshes/collision/link2.stl"/>
+-      </geometry>
+-    </collision>
++
++    <inertial>
++      <origin rpy="0 0 0" xyz="0 -0.03 0.12"/>
++      <mass value="5.76"/>
++      <inertia ixx="0.033" ixy="0" ixz="0" iyy="0.0333" iyz="0" izz="0.0123"/>
++    </inertial>
+   </link>
++
+   <joint name="panda_joint2" type="revolute">
+     <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-1.7628" soft_upper_limit="1.7628"/>
+     <origin rpy="-1.57079632679 0 0" xyz="0 0 0"/>
+@@ -56,18 +60,25 @@
+     <axis xyz="0 0 1"/>
+     <limit effort="87" lower="-1.7628" upper="1.7628" velocity="2.1750"/>
+   </joint>
++
++
+   <link name="panda_link3">
+     <visual>
+       <geometry>
+         <mesh filename="package://franka_description/meshes/visual/link3.dae"/>
+       </geometry>
+     </visual>
+-    <collision>
+-      <geometry>
+-        <mesh filename="package://franka_description/meshes/collision/link3.stl"/>
+-      </geometry>
+-    </collision>
++
++    <inertial>
++      <origin rpy="0 0 0" xyz="0.0003 0.059 0.042"/>
++      <mass value="6.35"/>
++      <!-- 3.95 kuka CAD value-->
++      <!--4 Original Drake URDF value-->
++      <inertia ixx="0.0305" ixy="0" ixz="0" iyy="0.0304" iyz="0" izz="0.011"/>
++    </inertial>
+   </link>
++
++
+   <joint name="panda_joint3" type="revolute">
+     <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
+     <origin rpy="1.57079632679 0 0" xyz="0 -0.316 0"/>
+@@ -76,20 +87,26 @@
+     <axis xyz="0 0 1"/>
+     <limit effort="87" lower="-2.8973" upper="2.8973" velocity="2.1750"/>
+   </joint>
++
++
+   <link name="panda_link4">
+     <visual>
+       <geometry>
+         <mesh filename="package://franka_description/meshes/visual/link4.dae"/>
+       </geometry>
+     </visual>
+-    <collision>
+-      <geometry>
+-        <mesh filename="package://franka_description/meshes/collision/link4.stl"/>
+-      </geometry>
+-    </collision>
++    <inertial>
++      <origin rpy="0 0 0" xyz="0 0.03 0.13"/>
++      <mass value="3.5"/>
++      <!--3.18 kuka CAD value-->
++      <!--3 Original Drake URDF value-->
++      <inertia ixx="0.025" ixy="0" ixz="0" iyy="0.0238" iyz="0" izz="0.0076"/>
++    </inertial>
++
+   </link>
++
+   <joint name="panda_joint4" type="revolute">
+-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-3.0718" soft_upper_limit="-0.0698"/>
++    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-3.0718 " soft_upper_limit="-0.0698"/>
+     <origin rpy="1.57079632679 0 0" xyz="0.0825 0 0"/>
+     <parent link="panda_link3"/>
+     <child link="panda_link4"/>
+@@ -101,13 +118,19 @@
+       <geometry>
+         <mesh filename="package://franka_description/meshes/visual/link5.dae"/>
+       </geometry>
++      <material name="red"/>
+     </visual>
+-    <collision>
+-      <geometry>
+-        <mesh filename="package://franka_description/meshes/collision/link5.stl"/>
+-      </geometry>
+-    </collision>
++
++    <inertial>
++      <origin rpy="0 0 0" xyz="0 0.067 0.034"/>
++      <mass value="3.5"/>
++      <!--2.74 kuka CAD value-->
++      <!--2.7 Original Drake URDF value-->
++      <inertia ixx="0.017" ixy="0" ixz="0" iyy="0.0164" iyz="0" izz="0.006"/>
++    </inertial>
+   </link>
++
++
+   <joint name="panda_joint5" type="revolute">
+     <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
+     <origin rpy="-1.57079632679 0 0" xyz="-0.0825 0.384 0"/>
+@@ -116,21 +139,26 @@
+     <axis xyz="0 0 1"/>
+     <limit effort="12" lower="-2.8973" upper="2.8973" velocity="2.6100"/>
+   </joint>
++
++
+   <link name="panda_link6">
+     <visual>
+       <geometry>
+         <mesh filename="package://franka_description/meshes/visual/link6.dae"/>
+       </geometry>
+     </visual>
+-    <collision>
+-      <geometry>
+-        <mesh filename="package://franka_description/meshes/collision/link6.stl"/>
+-      </geometry>
+-    </collision>
++    <inertial>
++      <origin rpy="0 0 0" xyz="0.0001 0.021 0.076"/>
++      <mass value="3.5"/>
++      <!--1.69 kuka CAD value-->
++      <!--1.7 Original Drake URDF value-->
++      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.0087" iyz="0" izz="0.00449"/>
++    </inertial>
++
+   </link>
+   <joint name="panda_joint6" type="revolute">
+     <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-0.0175" soft_upper_limit="3.7525"/>
+-    <origin rpy="1.57079632679 0 0" xyz="0 0 0"/>
++    <origin rpy="-1.57079632679 0 0" xyz="0 0 0"/>
+     <parent link="panda_link5"/>
+     <child link="panda_link6"/>
+     <axis xyz="0 0 1"/>
+@@ -142,11 +170,14 @@
+         <mesh filename="package://franka_description/meshes/visual/link7.dae"/>
+       </geometry>
+     </visual>
+-    <collision>
+-      <geometry>
+-        <mesh filename="package://franka_description/meshes/collision/link7.stl"/>
+-      </geometry>
+-    </collision>
++    <inertial>
++      <origin rpy="0 0 0" xyz="0 0.0006 0.0004"/>
++      <mass value="1.8"/>
++      <!--1.8 kuka CAD value-->
++      <!--1.8 Original Drake URDF value-->
++      <inertia ixx="0.0049" ixy="0" ixz="0" iyy="0.0047" iyz="0" izz="0.0036"/>
++    </inertial>
++
+   </link>
+   <joint name="panda_joint7" type="revolute">
+     <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
+@@ -158,7 +189,7 @@
+   </joint>
+   <link name="panda_link8"/>
+   <joint name="panda_joint8" type="fixed">
+-    <origin rpy="0 0 0" xyz="0 0 0.107"/>
++    <origin rpy="0 0 0.41" xyz="0 0 0.052"/>
+     <parent link="panda_link7"/>
+     <child link="panda_link8"/>
+     <axis xyz="0 0 0"/>
+@@ -173,59 +204,30 @@
+       <geometry>
+         <mesh filename="package://franka_description/meshes/visual/hand.dae"/>
+       </geometry>
++    <material name="red"/>
+     </visual>
+     <collision>
+       <geometry>
+         <mesh filename="package://franka_description/meshes/collision/hand.stl"/>
+       </geometry>
+     </collision>
++    <inertial>
++      <origin rpy="0 0 0" xyz="0 0 0.058"/>
++      <mass value="1.2"/>
++      <!--0.31 kuka CAD value-->
++      <!--0.3 Original Drake URDF value-->
++      <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
++    </inertial>
+   </link>
+-  <link name="panda_leftfinger">
+-    <visual>
+-      <geometry>
+-        <mesh filename="package://franka_description/meshes/visual/finger.dae"/>
+-      </geometry>
+-    </visual>
+-    <collision>
+-      <geometry>
+-        <mesh filename="package://franka_description/meshes/collision/finger.stl"/>
+-      </geometry>
+-    </collision>
+-  </link>
+-  <link name="panda_rightfinger">
+-    <visual>
+-      <origin rpy="0 0 3.14159265359" xyz="0 0 0"/>
+-      <geometry>
+-        <mesh filename="package://franka_description/meshes/visual/finger.dae"/>
+-      </geometry>
+-    </visual>
+-    <collision>
+-      <origin rpy="0 0 3.14159265359" xyz="0 0 0"/>
+-      <geometry>
+-        <mesh filename="package://franka_description/meshes/collision/finger.stl"/>
+-      </geometry>
+-    </collision>
+-  </link>
+-  <joint name="panda_finger_joint1" type="prismatic">
+-    <parent link="panda_hand"/>
+-    <child link="panda_leftfinger"/>
+-    <origin rpy="0 0 0" xyz="0 0 0.0584"/>
+-    <axis xyz="0 1 0"/>
+-    <limit effort="20" lower="0.0" upper="0.04" velocity="0.2"/>
+-  </joint>
+-  <joint name="panda_finger_joint2" type="prismatic">
+-    <parent link="panda_hand"/>
+-    <child link="panda_rightfinger"/>
+-    <origin rpy="0 0 0" xyz="0 0 0.0584"/>
+-    <axis xyz="0 -1 0"/>
+-    <limit effort="20" lower="0.0" upper="0.04" velocity="0.2"/>
+-    <mimic joint="panda_finger_joint1"/>
+-  </joint>
++
+   <link name="tool_link"/>
+   <joint name="tool_joint" type="fixed">
+-    <origin rpy="0 0 2.35619449019" xyz="0.0 0 0.1"/>
++    <origin rpy="0 0 -1.35619449019" xyz="0.0 0 0.052"/>
+     <axis xyz="0 0 1"/>
+     <parent link="panda_link8"/>
+     <child link="tool_link"/>
+   </joint>
+-</robot>
++  <material name="red">
++    <color rgba=" 0.8 0.0 0.0 1.0"/>
++  </material>
++</robot>
+\ No newline at end of file
+diff --git a/models/sink.urdf b/models/sink.urdf
+index e1b69d5..d4c78b5 100644
+--- a/models/sink.urdf
++++ b/models/sink.urdf
+@@ -1,20 +1,144 @@
+-<?xml version="1.0"?>
++
+ <robot name="sink">
++  <!-- Base link (updated from provided stove.urdf) -->
+   <link name="base_link">
++    <inertial>
++      <origin xyz="0 0 -0.025" rpy="0 0 0"/>
++      <mass value="10.0"/>
++      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
++    </inertial>
+     <visual>
+-      <origin xyz="0 0 0.025" rpy="0 0 0" />
++      <origin xyz="0 0 0.025" rpy="0 0 0"/>
+       <geometry>
+-        <box size="0.25 0.25 0.05" />
++        <box size="0.25 0.25 0.05"/>
+       </geometry>
+       <material name="blue">
+-        <color rgba="0 0 1 1" />
++        <color rgba="0 0 1 1"/>
+       </material>
+     </visual>
+     <collision>
+-      <origin xyz="0 0 0.025" rpy="0 0 0" />
++      <origin xyz="0 0 0.025" rpy="0 0 0"/>
+       <geometry>
+-        <box size="0.25 0.25 0.05" />
++        <box size="0.25 0.25 0.05"/>
+       </geometry>
+     </collision>
+   </link>
+-</robot>
+\ No newline at end of file
++
++  <!-- Wall 1: Front (y=-0.125) -->
++  <link name="wall_front">
++    <inertial>
++      <origin xyz="0 -0.125 0.075" rpy="0 0 0"/>
++      <mass value="1.0"/>
++      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
++    </inertial>
++    <visual>
++      <origin xyz="0 -0.125 0.075" rpy="0 0 0"/>
++      <geometry>
++        <box size="0.25 0.01 0.24"/>
++      </geometry>
++      <material name="blue">
++        <color rgba="0 0 1 1"/>
++      </material>
++    </visual>
++    <collision>
++      <origin xyz="0 -0.125 0.075" rpy="0 0 0"/>
++      <geometry>
++        <box size="0.25 0.01 0.25"/>
++      </geometry>
++    </collision>
++  </link>
++
++  <!-- Wall 2: Back (y=0.125) -->
++  <link name="wall_back">
++    <inertial>
++      <origin xyz="0 0.125 0.075" rpy="0 0 0"/>
++      <mass value="1.0"/>
++      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
++    </inertial>
++    <visual>
++      <origin xyz="0 0.125 0.075" rpy="0 0 0"/>
++      <geometry>
++        <box size="0.25 0.01 0.24"/>
++      </geometry>
++      <material name="blue">
++        <color rgba="0 0 1 1"/>
++      </material>
++    </visual>
++    <collision>
++      <origin xyz="0 0.125 0.075" rpy="0 0 0"/>
++      <geometry>
++        <box size="0.25 0.01 0.25"/>
++      </geometry>
++    </collision>
++  </link>
++
++  <!-- Wall 3: Left (x=-0.125) -->
++  <link name="wall_left">
++    <inertial>
++      <origin xyz="-0.125 0 0.075" rpy="0 0 0"/>
++      <mass value="1.0"/>
++      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
++    </inertial>
++    <visual>
++      <origin xyz="-0.125 0 0.075" rpy="0 0 0"/>
++      <geometry>
++        <box size="0.01 0.25 0.24"/>
++      </geometry>
++      <material name="blue">
++        <color rgba="0 0 1 1"/>
++      </material>
++    </visual>
++    <collision>
++      <origin xyz="-0.125 0 0.075" rpy="0 0 0"/>
++      <geometry>
++        <box size="0.01 0.25 0.25"/>
++      </geometry>
++    </collision>
++  </link>
++
++  <!-- Wall 4: Right (x=0.125) -->
++  <link name="wall_right">
++    <inertial>
++      <origin xyz="0.125 0 0.075" rpy="0 0 0"/>
++      <mass value="1.0"/>
++      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
++    </inertial>
++    <visual>
++      <origin xyz="0.125 0 0.075" rpy="0 0 0"/>
++      <geometry>
++        <box size="0.01 0.25 0.24"/>
++      </geometry>
++      <material name="blue">
++        <color rgba="0 0 1 1"/>
++      </material>
++    </visual>
++    <collision>
++      <origin xyz="0.125 0 0.075" rpy="0 0 0"/>
++      <geometry>
++        <box size="0.01 0.25 0.25"/>
++      </geometry>
++    </collision>
++  </link>
++
++  <!-- Joints to connect walls to base -->
++  <joint name="base_to_front" type="fixed">
++    <parent link="base_link"/>
++    <child link="wall_front"/>
++    <origin xyz="0 0 0" rpy="0 0 0"/>
++  </joint>
++  <joint name="base_to_back" type="fixed">
++    <parent link="base_link"/>
++    <child link="wall_back"/>
++    <origin xyz="0 0 0" rpy="0 0 0"/>
++  </joint>
++  <joint name="base_to_left" type="fixed">
++    <parent link="base_link"/>
++    <child link="wall_left"/>
++    <origin xyz="0 0 0" rpy="0 0 0"/>
++  </joint>
++  <joint name="base_to_right" type="fixed">
++    <parent link="base_link"/>
++    <child link="wall_right"/>
++    <origin xyz="0 0 0" rpy="0 0 0"/>
++  </joint>
++</robot>
+diff --git a/models/stove.urdf b/models/stove.urdf
+index 915ba25..bfeb2bf 100644
+--- a/models/stove.urdf
++++ b/models/stove.urdf
+@@ -1,20 +1,144 @@
+-<?xml version="1.0"?>
+-<robot name="stove">
++
++<robot name="stove_with_walls">
++  <!-- Base link (updated from provided stove.urdf) -->
+   <link name="base_link">
++    <inertial>
++      <origin xyz="0 0 -0.025" rpy="0 0 0"/>
++      <mass value="10.0"/>
++      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
++    </inertial>
+     <visual>
+-      <origin xyz="0 0 0.025" rpy="0 0 0" />
++      <origin xyz="0 0 0.025" rpy="0 0 0"/>
+       <geometry>
+-        <box size="0.25 0.25 0.05" />
++        <box size="0.25 0.25 0.05"/>
+       </geometry>
+       <material name="red">
+-        <color rgba="1 0 0 1" />
++        <color rgba="1 0 0 1"/>
+       </material>
+     </visual>
+     <collision>
+-      <origin xyz="0 0 0.025" rpy="0 0 0" />
++      <origin xyz="0 0 0.025" rpy="0 0 0"/>
+       <geometry>
+-        <box size="0.25 0.25 0.05" />
++        <box size="0.25 0.25 0.05"/>
+       </geometry>
+     </collision>
+   </link>
+-</robot>
+\ No newline at end of file
++
++  <!-- Wall 1: Front (y=-0.125) -->
++  <link name="wall_front">
++    <inertial>
++      <origin xyz="0 -0.125 0.075" rpy="0 0 0"/>
++      <mass value="1.0"/>
++      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
++    </inertial>
++    <visual>
++      <origin xyz="0 -0.125 0.075" rpy="0 0 0"/>
++      <geometry>
++        <box size="0.25 0.01 0.24"/>
++      </geometry>
++      <material name="red">
++        <color rgba="1 0 0 1"/>
++      </material>
++    </visual>
++    <collision>
++      <origin xyz="0 -0.125 0.075" rpy="0 0 0"/>
++      <geometry>
++        <box size="0.25 0.01 0.25"/>
++      </geometry>
++    </collision>
++  </link>
++
++  <!-- Wall 2: Back (y=0.125) -->
++  <link name="wall_back">
++    <inertial>
++      <origin xyz="0 0.125 0.075" rpy="0 0 0"/>
++      <mass value="1.0"/>
++      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
++    </inertial>
++    <visual>
++      <origin xyz="0 0.125 0.075" rpy="0 0 0"/>
++      <geometry>
++        <box size="0.25 0.01 0.24"/>
++      </geometry>
++      <material name="red">
++        <color rgba="1 0 0 1"/>
++      </material>
++    </visual>
++    <collision>
++      <origin xyz="0 0.125 0.075" rpy="0 0 0"/>
++      <geometry>
++        <box size="0.25 0.01 0.25"/>
++      </geometry>
++    </collision>
++  </link>
++
++  <!-- Wall 3: Left (x=-0.125) -->
++  <link name="wall_left">
++    <inertial>
++      <origin xyz="-0.125 0 0.075" rpy="0 0 0"/>
++      <mass value="1.0"/>
++      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
++    </inertial>
++    <visual>
++      <origin xyz="-0.125 0 0.075" rpy="0 0 0"/>
++      <geometry>
++        <box size="0.01 0.25 0.24"/>
++      </geometry>
++      <material name="red">
++        <color rgba="1 0 0 1"/>
++      </material>
++    </visual>
++    <collision>
++      <origin xyz="-0.125 0 0.075" rpy="0 0 0"/>
++      <geometry>
++        <box size="0.01 0.25 0.25"/>
++      </geometry>
++    </collision>
++  </link>
++
++  <!-- Wall 4: Right (x=0.125) -->
++  <link name="wall_right">
++    <inertial>
++      <origin xyz="0.125 0 0.075" rpy="0 0 0"/>
++      <mass value="1.0"/>
++      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
++    </inertial>
++    <visual>
++      <origin xyz="0.125 0 0.075" rpy="0 0 0"/>
++      <geometry>
++        <box size="0.01 0.25 0.24"/>
++      </geometry>
++      <material name="red">
++        <color rgba="1 0 0 1"/>
++      </material>
++    </visual>
++    <collision>
++      <origin xyz="0.125 0 0.075" rpy="0 0 0"/>
++      <geometry>
++        <box size="0.01 0.25 0.25"/>
++      </geometry>
++    </collision>
++  </link>
++
++  <!-- Joints to connect walls to base -->
++  <joint name="base_to_front" type="fixed">
++    <parent link="base_link"/>
++    <child link="wall_front"/>
++    <origin xyz="0 0 0" rpy="0 0 0"/>
++  </joint>
++  <joint name="base_to_back" type="fixed">
++    <parent link="base_link"/>
++    <child link="wall_back"/>
++    <origin xyz="0 0 0" rpy="0 0 0"/>
++  </joint>
++  <joint name="base_to_left" type="fixed">
++    <parent link="base_link"/>
++    <child link="wall_left"/>
++    <origin xyz="0 0 0" rpy="0 0 0"/>
++  </joint>
++  <joint name="base_to_right" type="fixed">
++    <parent link="base_link"/>
++    <child link="wall_right"/>
++    <origin xyz="0 0 0" rpy="0 0 0"/>
++  </joint>
++</robot>
+diff --git a/pybullet_tools/kuka_primitives.py b/pybullet_tools/kuka_primitives.py
+index 473f3ff..0b7ba63 100644
+--- a/pybullet_tools/kuka_primitives.py
++++ b/pybullet_tools/kuka_primitives.py
+@@ -49,7 +49,7 @@ GRASP_INFO = {
+             body, under=True, tool_pose=Pose(), max_width=INF,
+             grasp_length=-0.001
+         ),
+-        approach_pose=Pose(0.1 * Point(z=1)),
++        approach_pose=Pose(0.1 * Point(z=0.1)),
+     ),
+     "side": GraspInfo(
+         lambda body: get_side_grasps(
+@@ -62,7 +62,9 @@ GRASP_INFO = {
+ }
+ 
+ TOOL_FRAMES = {
+-    "iiwa14": "iiwa_link_ee_kuka",  # iiwa_link_ee | iiwa_link_ee_kuka
++    # "iiwa14": "iiwa_link_ee",  # iiwa_link_ee | iiwa_link_ee_kuka
++    # "iiwa14": "iiwa_link_ee_kuka",  # iiwa_link_ee | iiwa_link_ee_kuka
++    "panda": "panda_hand",
+ }
+ 
+ DEBUG_FAILURE = False
+@@ -340,8 +342,8 @@ def get_stable_gen(fixed=[]):
+     def gen(body, surface):
+         while True:
+             pose = sample_placement(body, surface)
+-            if (pose is None) or any(pairwise_collision(body, b) for b in fixed):
+-                continue
++            # if (pose is None) or any(pairwise_collision(body, b) for b in fixed):
++            #     continue
+             body_pose = BodyPose(body, pose)
+             yield (body_pose,)
+ 
+@@ -456,7 +458,9 @@ def get_free_motion_gen(robot, fixed=[], teleport=False, self_collisions=True, r
+                 obstacles=obstacles,
+                 self_collisions=self_collisions,
+                 return_collide=return_collide,
+-                max_time=max_time
++                max_time=max_time,
++                restarts=40,      # VIZ-COAST EDITED: more full RRT attempts before declaring infeasible
++                iterations=200,   # VIZ-COAST EDITED: samples per attempt (was RRT_ITERATIONS=40)
+             )
+             if return_collide:
+                 if isinstance(path, tuple):
+@@ -509,7 +513,9 @@ def get_holding_motion_gen(robot, fixed=[], teleport=False, self_collisions=True
+                 attachments=[grasp.attachment()],
+                 self_collisions=self_collisions,
+                 return_collide=return_collide,
+-                max_time=max_time
++                max_time=max_time,
++                restarts=40,      # VIZ-COAST EDITED: more full RRT attempts before declaring infeasible
++                iterations=200,   # VIZ-COAST EDITED: samples per attempt (was RRT_ITERATIONS=40)
+             )
+             if return_collide:
+                 if isinstance(path, tuple):
+diff --git a/pybullet_tools/utils.py b/pybullet_tools/utils.py
+index 9bb5baf..7902ddb 100644
+--- a/pybullet_tools/utils.py
++++ b/pybullet_tools/utils.py
+@@ -70,7 +70,6 @@ WSG_50_URDF = 'models/drake/wsg_50_description/urdf/wsg_50_mesh_visual.urdf' # w
+ #SCHUNK_URDF = 'models/drake/wsg_50_description/sdf/schunk_wsg_50.sdf'
+ PANDA_HAND_URDF = "models/franka_description/robots/hand.urdf"
+ PANDA_ARM_URDF = "models/franka_description/robots/panda_arm_hand.urdf"
+-
+ # PyBullet Robots
+ #PYBULLET_DIRECTORY = add_data_path()
+ KUKA_IIWA_URDF = 'kuka_iiwa/model.urdf'
+@@ -319,7 +318,7 @@ def safe_sample(collection, k=1):
+         return collection
+     return random.sample(collection, k)
+ 
+-class OrderedSet(collections.OrderedDict, collections.MutableSet):
++class OrderedSet(collections.OrderedDict, collections.abc.MutableSet):
+     # TODO: https://stackoverflow.com/questions/1653970/does-python-have-an-ordered-set
+     def __init__(self, seq=()): # known special case of set.__init__
+         #super(OrderedSet, self).__init__()
+@@ -1400,21 +1399,21 @@ def get_image(camera_pos, target_pos, width=640, height=480, vertical_fov=60.0,
+                                    flags=flags,
+                                    renderer=renderer,
+                                    physicsClientId=CLIENT)[2:]
+-    
++
+     depth = far * near / (far - (far - near) * d)
+     # https://github.com/bulletphysics/bullet3/blob/master/examples/pybullet/examples/pointCloudFromCameraImage.py
+     # https://github.com/bulletphysics/bullet3/blob/master/examples/pybullet/examples/getCameraImageTest.py
+     segmented = None
+     if segment:
+         segmented = extract_segmented(seg)
+-        
++
+     camera_tform = np.reshape(view_matrix, [4, 4])
+     camera_tform[:3, 3] = camera_pos
+     view_pose = multiply(pose_from_tform(camera_tform), Pose(euler=Euler(roll=PI)))
+ 
+     focal_length = get_focal_lengths(height, vertical_fov) # TODO: horizontal_fov
+     camera_matrix = get_camera_matrix(width, height, focal_length)
+-    
++
+     return CameraImage(rgb, depth, segmented, view_pose, camera_matrix)
+ 
+ def get_image_at_pose(camera_pose, camera_matrix, far=5.0, **kwargs):
+@@ -1619,7 +1618,7 @@ def quat_angle_between(quat0, quat1):
+     # q1 = unit_vector(quat1[:4])
+     # d = clip(np.dot(q0, q1), min_value=-1., max_value=+1.)
+     # angle = math.acos(d)
+-    
++
+     # TODO: angle_between
+     delta = p.getDifferenceQuaternion(quat0, quat1)
+     d = clip(delta[-1], min_value=-1., max_value=1.)
+@@ -3476,7 +3475,7 @@ def get_collision_fn(body, joints, obstacles, attachments, self_collisions, disa
+     lower_limits, upper_limits = get_custom_limits(body, joints, custom_limits)
+     get_obstacle_aabb = cached_fn(get_buffered_aabb, cache=cache, max_distance=max_distance/2., **kwargs)
+     # TODO: sort bodies by bounding box size
+-    
++
+     def collision_fn(q, verbose=False):
+         # if not all_between(lower_limits, q, upper_limits):
+         #     print('Joint limits violated')
+@@ -3576,7 +3575,7 @@ def check_initial_end(start_conf, end_conf, collision_fn, return_collide=False,
+         return True
+ 
+ def plan_joint_motion(body, joints, end_conf, obstacles=[], attachments=[],
+-                      self_collisions=True, disabled_collisions=set(),
++                      self_collisions=False, disabled_collisions=set(),
+                       weights=None, resolutions=None, max_distance=MAX_DISTANCE,
+                       use_aabb=False, cache=True, custom_limits={}, return_collide=False, **kwargs):
+ 

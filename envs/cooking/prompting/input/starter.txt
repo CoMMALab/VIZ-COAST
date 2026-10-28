@@ -1,0 +1,95 @@
+STARTER CODE FOR CONSTRAINT FUNCTION
+def generate_constraints(problem, domain, planner, pd):
+
+    # References to maximum possible instances of objects in domain
+    arms = {"left", "right"}
+    ingredients = {"ing1", "ing2", "ing3", "ing4", "ing5", "ing6", "ing7", "ing8"}
+    lids = {"lidleft", "lidright"}
+    pots = {"frypot", "steampot"}
+    plates = {"plateleft", "plateright", "platemid"}
+
+    # References to all predicates in domain
+    predicate_holding = domain.get_predicate("holding"),
+    predicate_on = domain.get_predicate("on"),
+    predicate_isfryer = domain.get_predicate("isfryer"),
+    predicate_issteamer = domain.get_predicate("issteamer"),
+    predicate_uncooked = domain.get_predicate("uncooked"),
+    predicate_fried = domain.get_predicate("fried"),
+    predicate_steamed = domain.get_predicate("steamed")
+
+    # Declare only actions we may want to block
+    action_pick = domain.get_action("pick"),
+    action_place = domain.get_action("place"),
+    action_placelid = domain.get_action("placelid")
+
+    # Action parameter order (the first parameter of every action is the arm):
+    #   pick(?a - arm, ?obj - movable, ?on - object)
+    #   place(?a - arm, ?obj - ingredient, ?on - object)
+    #   placelid(?a - arm, ?l - lid, ?on - object)
+
+    # ---- Mechanism A: block an ACTION while an expression holds ----
+    constraint = predicate.bind([predicate_objects], problem)
+    # or for negation
+    constraint = pd.make_not(predicate.bind([predicate_objects], problem))
+
+    for obj, param in zip(predicate_objects, blocked_action.parameters):
+        blocked_assignment.assign(problem, param.name, obj)
+
+    planner.block_expression_action(blocked_action, blocked_assignment, constraint, pd.Assignment())
+
+    # ---- Mechanism B: forbid a STATE at every step ----
+    planner.add_constraint(pd.Planner.ConstraintTime.OVER_ALL, expression, False)
+
+    # Choosing between them matters:
+    #
+    # Mechanism A constrains an action.  Mechanism B constrains the world.
+    #
+    # If a rule is really a property of the world -- some situation that simply
+    # must never exist -- state it with Mechanism B.  Expressing such a rule as
+    # an action block is weaker: a block only says "not this action, right
+    # now", so the planner can still arrive at the forbidden situation by a
+    # different action, a different agent, or a different order.
+    #
+    # Rule of thumb:
+    #   "X and Y must never both be true"  -> Mechanism B
+    #   "this agent may not do this"       -> Mechanism A
+    #   "not while this holds"             -> Mechanism A
+
+
+Examples of the API (deliberately arbitrary rules -- they are here to show the
+calls, not to suggest what this domain needs):
+
+    Example 1 (Mechanism A, unconditional):
+    Block the left arm from placing ing1 onto plateleft, always.
+    x = predicate_on.bind(["ing1", "plateleft"], problem)
+    constraint = pd.make_or([x, pd.make_not(x)])          # a tautology: block unconditionally
+    blocked_assignment = pd.Assignment()
+    for obj, param in zip(["left", "ing1", "plateleft"], action_place.parameters):
+        blocked_assignment.assign(problem, param.name, obj)
+    planner.block_expression_action(action_place, blocked_assignment, constraint, pd.Assignment())
+
+    Example 2 (Mechanism A, conditional):
+    Block the right arm from picking ing2 off platemid while ing3 is fried.
+    constraint = predicate_fried.bind(["ing3"], problem)
+    blocked_assignment = pd.Assignment()
+    for obj, param in zip(["right", "ing2", "platemid"], action_pick.parameters):
+        blocked_assignment.assign(problem, param.name, obj)
+    planner.block_expression_action(action_pick, blocked_assignment, constraint, pd.Assignment())
+
+    Example 3 (Mechanism A, negated condition):
+    Block the left arm from placing ing1 onto platemid unless ing2 is steamed.
+    constraint = pd.make_not(predicate_steamed.bind(["ing2"], problem))
+    blocked_assignment = pd.Assignment()
+    for obj, param in zip(["left", "ing1", "platemid"], action_place.parameters):
+        blocked_assignment.assign(problem, param.name, obj)
+    planner.block_expression_action(action_place, blocked_assignment, constraint, pd.Assignment())
+
+    Example 4 (Mechanism B):
+    Forbid ing1 and ing2 ever both being fried at the same time.
+    both = pd.make_and([predicate_fried.bind(["ing1"], problem),
+                        predicate_fried.bind(["ing2"], problem)])
+    planner.add_constraint(pd.Planner.ConstraintTime.OVER_ALL, both, False)
+
+    To create a generic always true expression via tautology:
+    x = some_predicate.bind([...], problem)
+    always_true = pd.make_or([x, pd.make_not(x)])

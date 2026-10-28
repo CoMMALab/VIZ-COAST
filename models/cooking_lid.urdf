@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<robot name="cooking_lid">
+  <!-- A 0.27x0.27 lid with a raised central knob.
+
+       The knob is what physically prevents two lids from stacking: a second
+       lid laid flat on this one's slab would have to pass through it.  That
+       keeps "lids do not stack" a geometric fact discoverable during
+       refinement (and visible in the camera image) rather than a rule hard
+       coded into the sampler.
+
+       It is a separate link so that base_link's AABB is the flat slab alone,
+       which is the support height anything placed on the lid rests at. -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0.015" rpy="0 0 0"/>
+      <mass value="10.0"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.015" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.27 0.27 0.03"/>
+      </geometry>
+      <material name="lid_grey">
+        <color rgba="0.5 0.5 0.5 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.015" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.27 0.27 0.03"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="knob">
+    <inertial>
+      <origin xyz="0 0 0.0475" rpy="0 0 0"/>
+      <mass value="0.2"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.0475" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.02" length="0.035"/>
+      </geometry>
+      <material name="knob_dark">
+        <color rgba="0.15 0.15 0.18 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.0475" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.02" length="0.035"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="base_to_knob" type="fixed">
+    <parent link="base_link"/>
+    <child link="knob"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+</robot>

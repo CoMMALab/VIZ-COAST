@@ -1,0 +1,24 @@
+diff --git a/setup.py b/setup.py
+index 3f0f1b7..3b291e9 100644
+--- a/setup.py
++++ b/setup.py
+@@ -71,6 +71,7 @@ class CMakeBuild(build_ext.build_ext):
+             "-DBUILD_PYTHON=ON",
+             "-DPYBIND11_PYTHON_VERSION=" + python_version,
+             "-DCMAKE_BUILD_TYPE=" + build_type,
++            "-DCMAKE_CXX_STANDARD=17", # added by me
+         ]
+         if not self.inplace:
+             # Use relative paths for install rpath.
+diff --git a/src/python/symbolic.cc b/src/python/symbolic.cc
+index b248614..ca9e0b0 100644
+--- a/src/python/symbolic.cc
++++ b/src/python/symbolic.cc
+@@ -7,6 +7,7 @@
+  * Authors: Toki Migimatsu
+  */
+ 
++#include <cstdint>
+ #include <VAL/ptree.h>
+ #include <pybind11/eigen.h>
+ #include <pybind11/functional.h>

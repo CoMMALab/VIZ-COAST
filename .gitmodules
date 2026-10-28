@@ -1,0 +1,19 @@
+[submodule "external/pybullet-planning"]
+	path = external/pybullet-planning
+	url = https://github.com/branvu/pybullet-planning.git
+	branch = coast_changes
+[submodule "external/symbolic"]
+	path = external/symbolic
+	url = https://github.com/branvu/symbolic.git
+	branch = main
+[submodule "external/spatial-dyn"]
+	path = external/spatial-dyn
+	url = https://github.com/tmigimatsu/spatial-dyn.git
+	branch = main
+[submodule "external/pddlboat"]
+	path = external/pddlboat
+	url = https://github.com/CoMMALab/pddlboat.git
+	branch = muyang
+[submodule "external/downward"]
+	path = external/downward
+	url = https://github.com/aibasel/downward.git

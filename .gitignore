@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.idea/
+.vscode/
+
+envs/**/prompting/input/default_camera_capture.png
+envs/**/prompting/input/scene_description.txt
+envs/**/prompting/input/template_scene_description.txt
+envs/**/prompting/output/
+envs/**/temp_domain.pddl
+envs/**/temp_problem.pddl
+envs/**/temp_constraints.py
+envs/**/temp_plan.txt
+envs/**/VLMB_plan.txt
+envs/**/fd_plan.txt

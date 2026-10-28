@@ -1,0 +1,144 @@
+
+<robot name="sink">
+  <!-- Base link (updated from provided stove.urdf) -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 -0.025" rpy="0 0 0"/>
+      <mass value="10.0"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.025" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.25 0.25 0.05"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.025" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.25 0.25 0.05"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Wall 1: Front (y=-0.125) -->
+  <link name="wall_front">
+    <inertial>
+      <origin xyz="0 -0.125 0.075" rpy="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 -0.125 0.075" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.25 0.01 0.24"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.125 0.075" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.25 0.01 0.25"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Wall 2: Back (y=0.125) -->
+  <link name="wall_back">
+    <inertial>
+      <origin xyz="0 0.125 0.075" rpy="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0.125 0.075" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.25 0.01 0.24"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0.125 0.075" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.25 0.01 0.25"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Wall 3: Left (x=-0.125) -->
+  <link name="wall_left">
+    <inertial>
+      <origin xyz="-0.125 0 0.075" rpy="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.125 0 0.075" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.25 0.24"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.125 0 0.075" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.25 0.25"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Wall 4: Right (x=0.125) -->
+  <link name="wall_right">
+    <inertial>
+      <origin xyz="0.125 0 0.075" rpy="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.125 0 0.075" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.25 0.24"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.125 0 0.075" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.25 0.25"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Joints to connect walls to base -->
+  <joint name="base_to_front" type="fixed">
+    <parent link="base_link"/>
+    <child link="wall_front"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="base_to_back" type="fixed">
+    <parent link="base_link"/>
+    <child link="wall_back"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="base_to_left" type="fixed">
+    <parent link="base_link"/>
+    <child link="wall_left"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="base_to_right" type="fixed">
+    <parent link="base_link"/>
+    <child link="wall_right"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+</robot>

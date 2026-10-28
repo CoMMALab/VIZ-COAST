@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot name="plate">
+  <!-- Same 0.27x0.27 x-y footprint as tetris_box.urdf and lid.urdf, so a lid
+       placed on a plate covers it exactly and no second lid can fit. -->
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0.01" rpy="0 0 0"/>
+      <mass value="10.0"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.01" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.27 0.27 0.02"/>
+      </geometry>
+      <material name="plate_white">
+        <color rgba="0.93 0.93 0.90 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.01" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.27 0.27 0.02"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

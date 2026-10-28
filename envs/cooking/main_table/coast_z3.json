@@ -1,0 +1,779 @@
+{
+    "global": {
+        "exp": "cooking",
+        "method": "coast_z3",
+        "z3_encoding": "madagascar",
+        "provider": "gemini",
+        "model": "gemini-3.5-flash",
+        "reasoning_effort": "medium",
+        "prompt_strategy": "on failure",
+        "feedback": true,
+        "reprompt_failure_threshold": 1,
+        "reps": 1,
+        "max_iterations": 100,
+        "incremental_initial_horizon": 1,
+        "plan_as_subproc": true,
+        "timeout": 400,
+        "trial_mode": true,
+        "results_file": "envs/cooking/main_table",
+        "dynamic_timesteps": true,
+        "sat_semantics": "forall_step"
+    },
+    "specific": [
+        {
+            "num_ingredients": {
+                "left": 1,
+                "right": 1
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "plateright",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "plateright",
+                    "fried"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 1,
+                "right": 1
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "plateright",
+                    "steamed"
+                ],
+                [
+                    "ing2",
+                    "plateright",
+                    "steamed"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 1,
+                "right": 1
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "platemid",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "plateleft",
+                    "steamed"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 1,
+                "right": 1
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "platemid",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "plateleft",
+                    "uncooked"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 1,
+                "right": 1
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "plateright",
+                    "steamed"
+                ],
+                [
+                    "ing2",
+                    "plateleft",
+                    "uncooked"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 1,
+                "right": 1
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "plateright",
+                    "uncooked"
+                ],
+                [
+                    "ing2",
+                    "platemid",
+                    "uncooked"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 2,
+                "right": 0
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "platemid",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "platemid",
+                    "steamed"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 0,
+                "right": 2
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "platemid",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "plateleft",
+                    "steamed"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 2,
+                "right": 1
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "plateright",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "plateleft",
+                    "fried"
+                ],
+                [
+                    "ing3",
+                    "platemid",
+                    "steamed"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 2,
+                "right": 1
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "plateleft",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "platemid",
+                    "steamed"
+                ],
+                [
+                    "ing3",
+                    "plateright",
+                    "steamed"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 2,
+                "right": 1
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "plateright",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "platemid",
+                    "steamed"
+                ],
+                [
+                    "ing3",
+                    "plateleft",
+                    "uncooked"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 1,
+                "right": 2
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "plateright",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "plateright",
+                    "fried"
+                ],
+                [
+                    "ing3",
+                    "plateright",
+                    "steamed"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 1,
+                "right": 2
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "platemid",
+                    "steamed"
+                ],
+                [
+                    "ing2",
+                    "platemid",
+                    "steamed"
+                ],
+                [
+                    "ing3",
+                    "plateleft",
+                    "uncooked"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 1,
+                "right": 2
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "platemid",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "plateright",
+                    "steamed"
+                ],
+                [
+                    "ing3",
+                    "platemid",
+                    "uncooked"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 3,
+                "right": 0
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "platemid",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "plateright",
+                    "steamed"
+                ],
+                [
+                    "ing3",
+                    "plateright",
+                    "uncooked"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 0,
+                "right": 3
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "platemid",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "plateleft",
+                    "steamed"
+                ],
+                [
+                    "ing3",
+                    "plateleft",
+                    "uncooked"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 2,
+                "right": 2
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "platemid",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "plateright",
+                    "fried"
+                ],
+                [
+                    "ing3",
+                    "platemid",
+                    "steamed"
+                ],
+                [
+                    "ing4",
+                    "platemid",
+                    "steamed"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 2,
+                "right": 2
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "platemid",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "plateleft",
+                    "steamed"
+                ],
+                [
+                    "ing3",
+                    "platemid",
+                    "steamed"
+                ],
+                [
+                    "ing4",
+                    "platemid",
+                    "uncooked"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 2,
+                "right": 2
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "plateright",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "plateleft",
+                    "fried"
+                ],
+                [
+                    "ing3",
+                    "platemid",
+                    "steamed"
+                ],
+                [
+                    "ing4",
+                    "platemid",
+                    "uncooked"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 3,
+                "right": 1
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "platemid",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "plateleft",
+                    "fried"
+                ],
+                [
+                    "ing3",
+                    "plateleft",
+                    "steamed"
+                ],
+                [
+                    "ing4",
+                    "platemid",
+                    "steamed"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 1,
+                "right": 3
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "plateleft",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "plateleft",
+                    "steamed"
+                ],
+                [
+                    "ing3",
+                    "plateleft",
+                    "steamed"
+                ],
+                [
+                    "ing4",
+                    "platemid",
+                    "uncooked"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 4,
+                "right": 0
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "plateright",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "platemid",
+                    "fried"
+                ],
+                [
+                    "ing3",
+                    "platemid",
+                    "steamed"
+                ],
+                [
+                    "ing4",
+                    "plateright",
+                    "uncooked"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 0,
+                "right": 4
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "plateleft",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "plateleft",
+                    "steamed"
+                ],
+                [
+                    "ing3",
+                    "platemid",
+                    "steamed"
+                ],
+                [
+                    "ing4",
+                    "platemid",
+                    "uncooked"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 3,
+                "right": 2
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "plateleft",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "plateleft",
+                    "fried"
+                ],
+                [
+                    "ing3",
+                    "plateright",
+                    "steamed"
+                ],
+                [
+                    "ing4",
+                    "platemid",
+                    "steamed"
+                ],
+                [
+                    "ing5",
+                    "platemid",
+                    "uncooked"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 3,
+                "right": 2
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "platemid",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "plateright",
+                    "fried"
+                ],
+                [
+                    "ing3",
+                    "platemid",
+                    "steamed"
+                ],
+                [
+                    "ing4",
+                    "plateleft",
+                    "steamed"
+                ],
+                [
+                    "ing5",
+                    "plateleft",
+                    "uncooked"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 2,
+                "right": 3
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "plateleft",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "plateright",
+                    "steamed"
+                ],
+                [
+                    "ing3",
+                    "platemid",
+                    "steamed"
+                ],
+                [
+                    "ing4",
+                    "platemid",
+                    "uncooked"
+                ],
+                [
+                    "ing5",
+                    "plateleft",
+                    "uncooked"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 2,
+                "right": 3
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "plateright",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "platemid",
+                    "fried"
+                ],
+                [
+                    "ing3",
+                    "plateleft",
+                    "steamed"
+                ],
+                [
+                    "ing4",
+                    "plateright",
+                    "steamed"
+                ],
+                [
+                    "ing5",
+                    "platemid",
+                    "uncooked"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 4,
+                "right": 1
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "platemid",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "plateright",
+                    "fried"
+                ],
+                [
+                    "ing3",
+                    "plateright",
+                    "steamed"
+                ],
+                [
+                    "ing4",
+                    "platemid",
+                    "steamed"
+                ],
+                [
+                    "ing5",
+                    "platemid",
+                    "uncooked"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 4,
+                "right": 1
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "plateright",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "platemid",
+                    "fried"
+                ],
+                [
+                    "ing3",
+                    "platemid",
+                    "steamed"
+                ],
+                [
+                    "ing4",
+                    "plateright",
+                    "steamed"
+                ],
+                [
+                    "ing5",
+                    "plateleft",
+                    "uncooked"
+                ]
+            ]
+        },
+        {
+            "num_ingredients": {
+                "left": 1,
+                "right": 4
+            },
+            "goals": [
+                [
+                    "ing1",
+                    "plateleft",
+                    "fried"
+                ],
+                [
+                    "ing2",
+                    "platemid",
+                    "fried"
+                ],
+                [
+                    "ing3",
+                    "platemid",
+                    "steamed"
+                ],
+                [
+                    "ing4",
+                    "plateleft",
+                    "steamed"
+                ],
+                [
+                    "ing5",
+                    "plateleft",
+                    "uncooked"
+                ]
+            ]
+        }
+    ]
+}

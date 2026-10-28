@@ -1,0 +1,61 @@
+STARTER CODE FOR CONSTRAINT FUNCTION
+def generate_constraints(problem, domain, planner, pd):
+
+    # References to maximum possible instances of objects in domain
+    blocks = {"b1", "b2", "b3", "b4", "b5", "b6", "b7", "b8", "b9", "b10", "b11", "b12"}
+    locations = {"loc1", "loc2", "loc3", "loc4", "loc5", "loc6", "loc7", "loc8", "loc9", "loc10", "loc11", "loc12"}
+
+    # References to all predicates in domain
+    predicate_clear = domain.get_predicate("clear"),
+    predicate_ontable = domain.get_predicate("ontable"),
+    predicate_holding = domain.get_predicate("holding"),
+    predicate_handempty = domain.get_predicate("handempty")
+
+    # Declare only actions we may want to block
+    action_pick = domain.get_action("pick"),
+    action_place = domain.get_action("place")
+
+    # General Constraint Application Structure
+    constraint = predicate.bind([predicate_objects], problem)
+    # or for negation
+    constraint = pd.make_not(predicate.bind([predicate_objects], problem))
+
+    for obj, param in zip(predicate_objects, blocked_action.parameters):
+        blocked_assignment.assign(problem, param.name, obj)
+
+    planner.block_expression_action(blocked_action, blocked_assignment, constraint, pd.Assignment())
+
+
+Examples of Valid Constraints:
+
+    Example 1:
+    Block the pick action for block b2 from location loc2 if loc9 is not clear.
+    constraint = pd.make_not(predicate_clear.bind(["loc9"], problem))
+    for obj, param in zip(["b2", "loc2"], blocked_action_pick.parameters):
+        blocked_assignment.assign(problem, param.name, obj)
+    planner.block_expression_action(blocked_action_pick, blocked_assignment, constraint, pd.Assignment())
+
+    Example 2:
+    Block the place action for block b3 at location loc1 if b2 is on table at loc8.
+    constraint = predicate_ontable.bind(["b2", "loc8"], problem)
+    for obj, param in zip(["b3", "loc1"], blocked_action_place.parameters):
+        blocked_assignment.assign(problem, param.name, obj)
+    planner.block_expression_action(blocked_action_place, blocked_assignment, constraint, pd.Assignment())
+
+    Example 3:
+    Block the pick action for block b4 from location loc6 if loc7 is clear.
+    constraint = predicate_clear.bind(["loc7"], problem)
+    for obj, param in zip(["b4", "loc6"], blocked_action_pick.parameters):
+        blocked_assignment.assign(problem, param.name, obj)
+    planner.block_expression_action(blocked_action_pick, blocked_assignment, constraint, pd.Assignment())
+
+    Example 4:
+    Block the place action for block b1 at location loc4 if block b6 is not on table at loc1.
+    constraint = pd.make_not(predicate_ontable.bind(["b6", "loc1"], problem))
+    for obj, param in zip(["b1", "loc4"], blocked_action_place.parameters):
+        blocked_assignment.assign(problem, param.name, obj)
+    planner.block_expression_action(blocked_action_place, blocked_assignment, constraint, pd.Assignment())
+
+    To create a generic always true expression via tautology:
+    x = some_predicate.bind([...], problem)
+    always_true = pd.make_or([x, pd.make_not(x)])

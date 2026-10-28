@@ -1,0 +1,39 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 633ddf0..e5ab1f4 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -30,6 +30,11 @@ lib_dependent_option(${LIB_CMAKE_NAME}_MAIN_BUILD
+ # Generate a compilation database for autocompletion.
+ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+ 
++# VIZ-COAST ADDED
++set(CMAKE_CXX_STANDARD 17)
++set(CMAKE_CXX_STANDARD_REQUIRED ON)
++set(CMAKE_CXX_EXTENSIONS OFF)
++
+ # Use testing framework.
+ if(${LIB_CMAKE_NAME}_MAIN_BUILD)
+     include(CTest)
+diff --git a/setup.py b/setup.py
+index 25f8175..b47f784 100644
+--- a/setup.py
++++ b/setup.py
+@@ -6,7 +6,7 @@ import sys
+ 
+ import setuptools  # type: ignore
+ from setuptools.command import build_ext  # type: ignore
+-from setuptools.extern.packaging import version  # type: ignore
++# from setuptools.extern.packaging import version  # type: ignore
+ 
+ 
+ __version__ = "1.5.2"
+@@ -71,6 +71,9 @@ class CMakeBuild(build_ext.build_ext):
+             "-DBUILD_PYTHON=ON",
+             "-DPYBIND11_PYTHON_VERSION=" + python_version,
+             "-DCMAKE_BUILD_TYPE=" + build_type,
++            "-DCMAKE_CXX_STANDARD=17", # added by me
++            # Match pybind11 ABI tag with installed ctrlutils for cross-module type sharing.
++            '-DCMAKE_CXX_FLAGS=-DPYBIND11_BUILD_ABI=\'"_cxxabi1014"\'',
+         ]
+         if not self.inplace:
+             # Use relative paths for install rpath.

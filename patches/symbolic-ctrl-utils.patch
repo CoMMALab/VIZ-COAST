@@ -1,0 +1,21 @@
+diff --git a/include/ctrl_utils/json.h b/include/ctrl_utils/json.h
+index b25ff82..16342db 100644
+--- a/include/ctrl_utils/json.h
++++ b/include/ctrl_utils/json.h
+@@ -37,9 +37,13 @@ void to_json(nlohmann::json& json, const Eigen::DenseBase<Derived>& matrix) {
+     }
+   }
+ }
+-
+-template<typename Derived>
+-void from_json(const nlohmann::json& json, Eigen::DenseBase<Derived>& matrix) {
++// VIZ-COAST EDITED
++// Previous:
++// template<typename Derived>
++// void from_json(const nlohmann::json& json, Eigen::DenseBase<Derived>& matrix) {
++template <typename Scalar, int Rows, int Cols, int Options, int MaxRows, int MaxCols>
++void from_json(const nlohmann::json& json,
++               Eigen::Matrix<Scalar, Rows, Cols, Options, MaxRows, MaxCols>& matrix) {
+   if (json.type() != nlohmann::json::value_t::array) {
+     throw std::runtime_error("Eigen::from_json(): Json type is not an array.");
+   }

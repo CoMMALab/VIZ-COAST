@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot name="container_lid2">
+  <link name="lid2">
+    <visual>
+      <origin xyz="0 0 0.005" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.25 0.25 0.01"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0.005" rpy="0 0 0"/> <!-- match visual -->
+      <geometry>
+        <box size="0.25 0.25 0.01"/>
+      </geometry>
+    </collision>
+
+  </link>
+</robot>

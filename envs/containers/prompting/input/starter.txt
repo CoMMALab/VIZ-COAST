@@ -1,0 +1,63 @@
+STARTER CODE FOR CONSTRAINT FUNCTION
+def generate_constraints(problem, domain, planner, pd):
+
+    # References to maximum possible instances of objects in domain
+    items = {"egg", "bacon", "celery", "radish", "g1", "g2"}
+    lids = {"lid1", "lid2", "lid3"}
+    surfaces = {"mytable", "mystove", "mysink", "mynorth", "myplate"}
+
+    # References to all predicates in domain
+    predicate_holding = domain.get_predicate("holding"),
+    predicate_on = domain.get_predicate("on"),
+    predicate_closed = domain.get_predicate("closed")
+
+    # Declare only actions we may want to block
+    action_pick = domain.get_action("pick"),
+    action_place = domain.get_action("place"),
+    action_placetop = domain.get_action("placetop"),
+    action_unplacetop = domain.get_action("unplacetop")
+
+    # General Constraint Application Structure
+    constraint = predicate.bind([predicate_objects], problem)
+    # or for negation
+    constraint = pd.make_not(predicate.bind([predicate_objects], problem))
+
+    for obj, param in zip(predicate_objects, blocked_action.parameters):
+        blocked_assignment.assign(problem, param.name, obj)
+
+    planner.block_expression_action(blocked_action, blocked_assignment, constraint, pd.Assignment())
+
+
+Examples of Valid Constraints:
+
+    Example 1:
+    Block the pick action for egg from mysink if lid1 is closed on mysink.
+    constraint = predicate_closed.bind(["lid1", "mysink"], problem)
+    for obj, param in zip(["egg", "mysink"], action_pick.parameters):
+        blocked_assignment.assign(problem, param.name, obj)
+    planner.block_expression_action(action_pick, blocked_assignment, constraint, pd.Assignment())
+
+    Example 2:
+    Block the place action for bacon on mystove if celery is not on mystove.
+    constraint = pd.make_not(predicate_on.bind(["celery", "mystove"], problem))
+    for obj, param in zip(["bacon", "mystove"], action_place.parameters):
+        blocked_assignment.assign(problem, param.name, obj)
+    planner.block_expression_action(action_place, blocked_assignment, constraint, pd.Assignment())
+
+    Example 3:
+    Block the placetop action for lid2 on mystove if egg is not on mystove.
+    constraint = pd.make_not(predicate_on.bind(["egg", "mystove"], problem))
+    for obj, param in zip(["lid2", "mystove"], action_placetop.parameters):
+        blocked_assignment.assign(problem, param.name, obj)
+    planner.block_expression_action(action_placetop, blocked_assignment, constraint, pd.Assignment())
+
+    Example 4:
+    Block the place action for g1 on mysink if g2 is on mysink.
+    constraint = predicate_on.bind(["g2", "mysink"], problem)
+    for obj, param in zip(["g1", "mysink"], action_place.parameters):
+        blocked_assignment.assign(problem, param.name, obj)
+    planner.block_expression_action(action_place, blocked_assignment, constraint, pd.Assignment())
+
+    To create a generic always true expression via tautology:
+    x = some_predicate.bind([...], problem)
+    always_true = pd.make_or([x, pd.make_not(x)])
